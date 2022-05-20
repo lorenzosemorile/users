@@ -1,0 +1,170 @@
+body {
+  margin:0;
+  padding: 0;
+}
+
+$gray: #F4F4F4;
+$gray-dark: #b2b2b2;
+
+.home {
+
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    background-color: $gray
+  }
+
+  aside {
+    width: 96px;
+    background-color: #262626;
+    height: auto;
+  }
+
+  main {
+    flex-direction: column;
+    padding: 63px 60px;
+  }
+
+}
+
+.toolbar {
+  display: flex;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 39px;
+  }
+
+  &__count {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    color: $gray-dark;
+  }
+
+  &__heading {
+    display: flex;
+    column-gap: 23px;
+    align-items: baseline;
+  }
+
+  &__select {
+    padding: 20px;
+    border: 1px solid #c5c5c5;
+    border-radius: 10px;
+    position: relative;
+
+    .toolbar__select__label {
+
+      position: absolute;
+      left: 10px;
+      top: -10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      background: $gray;
+      padding: 0 5px;
+      color: $gray-dark;
+    }
+
+    .toolbar__select__current {
+      display: inline-block;
+      width: 156px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 23px;
+      color: #262626;
+    }
+
+    .toolbar__gender__list{
+      display: none;
+      position: absolute;
+      background: #f4f4f4;
+      width: 148px;
+      border-radius: 0 0 10px 10px;
+      bottom: calc(-100% - 57px);
+      left: 10px;
+      padding: 0 20px;
+      box-shadow: 0 6px 14px #4040402b;
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          padding: 10px 0;
+          border-bottom: 1px solid #eee;
+          cursor: pointer;
+        }
+
+        li:last-child{
+          border:none;
+        }
+      }
+    }
+  }
+
+
+
+}
+
+.cards {
+
+  &__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 180px);
+    grid-template-rows: 301px auto auto;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+  }
+
+  .card {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    &__information {
+      padding: 0 8px;
+    }
+  }
+
+
+
+  .card__name {
+    color: #333333;
+    font-size: 16px;
+    line-height: 23px;
+    display: block;
+    font-weight: 500;
+  }
+
+  .card__email {
+    color: #999999;
+    font-size: 12px;
+    line-height: 17px;
+    display: block;
+  }
+
+  address {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    font-style: normal;
+    color: $gray-dark;
+  }
+
+}
