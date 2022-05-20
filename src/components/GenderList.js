@@ -19,9 +19,9 @@ export const GenderList = ({onGenderChange}) => {
 
   const genderListRef = useRef();
   const genderListClickHandler = () => {
-    const display = genderListRef.current.style.display
-    const show = display === 'block' ? 'none' : 'block';
-    genderListRef.current.style.display = show;
+    const list = genderListRef.current;
+    list.classList.toggle('opened');
+    list.closest('.toolbar__select').classList.toggle('opened');
   }
 
   useEffect(() => {

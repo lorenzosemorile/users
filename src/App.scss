@@ -81,8 +81,15 @@ $gray-dark: #b2b2b2;
       color: #262626;
     }
 
+    .toolbar__select__caret {
+      transition: all .2s ease-in-out;
+    }
+
     .toolbar__gender__list{
-      display: none;
+      animation: fadeOut ease 0.2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      visibility: hidden;
       position: absolute;
       background: #f4f4f4;
       width: 148px;
@@ -106,6 +113,18 @@ $gray-dark: #b2b2b2;
           border:none;
         }
       }
+    }
+
+    .toolbar__gender__list.opened{
+      animation: fadeIn ease 0.2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &__select.opened {
+    .toolbar__select__caret {
+      transform: rotate(180deg);
     }
   }
 
@@ -167,4 +186,24 @@ $gray-dark: #b2b2b2;
     color: $gray-dark;
   }
 
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+  }
 }
